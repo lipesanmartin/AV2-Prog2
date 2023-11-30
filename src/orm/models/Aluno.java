@@ -97,4 +97,17 @@ public class Aluno {
     public void setEndereco(String endereco) {
         this.endereco = endereco;
     }
+
+    @Override
+    public String toString() {
+        return "Aluno{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", cpf='" + cpf + '\'' +
+                ", dataDeNascimento='" + dataDeNascimento + '\'' +
+                ", naturalidade='" + naturalidade + '\'' +
+                ", endereco='" + endereco + '\'' +
+                '}';
+    }
 }
