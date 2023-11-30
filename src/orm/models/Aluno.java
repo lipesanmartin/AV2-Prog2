@@ -1,14 +1,12 @@
 package orm.models;
 
 import javax.persistence.*;
-import java.util.Calendar;
 
 @Entity
 @Table(name = "alunos")
 public class Aluno {
 
-    // Id, Nome, e-mail, CPF, Data de
-    //Nascimento, Naturalidade e Endereço
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "aluno_id")
@@ -24,8 +22,7 @@ public class Aluno {
     private String cpf;
 
     @Column(name = "aluno_data_nascimento")
-    @Temporal(TemporalType.DATE)
-    private Calendar dataDeNascimento;
+    private String dataDeNascimento;
 
     @Column(name = "aluno_naturalidade")
     private String naturalidade;
@@ -36,7 +33,7 @@ public class Aluno {
     public Aluno() {
     }
 
-    public Aluno(String name, String email, String cpf, Calendar dataDeNascimento, String naturalidade, String endereco) {
+    public Aluno(String name, String email, String cpf, String dataDeNascimento, String naturalidade, String endereco) {
         this.name = name;
         this.email = email;
         this.cpf = cpf;
@@ -77,11 +74,11 @@ public class Aluno {
         this.cpf = cpf;
     }
 
-    public Calendar getDataDeNascimento() {
+    public String getDataDeNascimento() {
         return dataDeNascimento;
     }
 
-    public void setDataDeNascimento(Calendar dataDeNascimento) {
+    public void setDataDeNascimento(String dataDeNascimento) {
         this.dataDeNascimento = dataDeNascimento;
     }
 
